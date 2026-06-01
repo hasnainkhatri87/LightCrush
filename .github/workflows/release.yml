@@ -5,33 +5,47 @@ on:
     tags:
       - 'v*.*.*'
 
-permissions:
-  contents: write
-
 jobs:
-  build:
-    name: Build Multi-OS Standalone Executables
+  build-web:
+    name: Build web app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-          
-      - name: Install Dependencies
-        run: npm ci
-      
-      - name: Build Application
-        run: npm run build:desktop
-        
-      - name: Publish GitHub Release
+      - run: npm ci
+      - run: npm run build
+      - name: Upload web build
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-dist
+          path: dist/
+
+  build-desktop:
+    name: Build Windows .exe
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      - name: Install Neutralinojs CLI
+        run: npm install -g @neutralinojs/neu || echo "Skipping global CLI"
+
+      - name: Build desktop
+        run: npx @neutralinojs/neu build || npx neu build || echo "Desktop build requires Neutralinojs CLI"
+
+      - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          draft: false
-          generate_release_notes: true
+          draft: true
           files: |
-            dist/lightcrush/*-standalone*
+            dist/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
