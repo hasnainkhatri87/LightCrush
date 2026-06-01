@@ -1,9 +1,9 @@
 {
   "applicationId": "com.lightcrush.desktop",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "defaultMode": "window",
-  "documentRoot": "/",
-  "url": "/build/index.html",
+  "documentRoot": "/build/",
+  "url": "/",
   "enableServer": true,
   "enableNativeAPI": true,
   "modes": {

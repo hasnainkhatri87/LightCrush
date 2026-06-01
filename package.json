@@ -1,6 +1,6 @@
 {
   "name": "lightcrush",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Ultra-lightweight offline image compressor. Compress JPG, PNG, WebP images with high quality. No uploads, no cloud.",
   "type": "module",
   "private": false,
