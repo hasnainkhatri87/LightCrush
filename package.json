@@ -9,7 +9,7 @@
     "dev": "vite",
     "dev:desktop": "npx @neutralinojs/neu run",
     "build": "tsc && vite build",
-    "build:desktop": "tsc && vite build && copy neutralino.config.json build\\neutralino.config.json && npx @neutralinojs/neu build --release --embed-resources",
+    "build:desktop": "tsc && vite build && node -e \"require('fs').copyFileSync('neutralino.config.json', 'build/neutralino.config.json')\" && npx @neutralinojs/neu build --release --embed-resources",
     "preview": "vite preview"
   },
   "dependencies": {
