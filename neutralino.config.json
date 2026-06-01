@@ -1,0 +1,32 @@
+{
+  "applicationId": "com.lightcrush.desktop",
+  "version": "0.2.0",
+  "defaultMode": "window",
+  "documentRoot": "/build/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "modes": {
+    "window": {
+      "title": "LightCrush Desktop",
+      "width": 1220,
+      "height": 760,
+      "minWidth": 900,
+      "minHeight": 640
+    }
+  },
+  "nativeAllowList": [
+    "app.*",
+    "os.showOpenDialog",
+    "os.showSaveDialog",
+    "os.showFolderDialog",
+    "filesystem.writeBinaryFile"
+  ],
+  "cli": {
+    "binaryName": "lightcrush",
+    "resourcesPath": "build",
+    "clientLibrary": "/public/neutralino.js",
+    "binaryVersion": "6.7.0",
+    "clientVersion": "6.7.0"
+  }
+}

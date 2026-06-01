@@ -1,0 +1,28 @@
+{
+  "name": "lightcrush",
+  "version": "0.2.0",
+  "description": "Ultra-lightweight offline image compressor. Compress JPG, PNG, WebP images with high quality. No uploads, no cloud.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "dev:desktop": "npx @neutralinojs/neu run",
+    "build": "tsc && vite build",
+    "build:desktop": "tsc && vite build && copy neutralino.config.json build\\neutralino.config.json && npx @neutralinojs/neu build && node scripts/bundle-all.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@neutralinojs/lib": "^5.0.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
