@@ -1,6 +1,6 @@
 {
   "name": "lightcrush",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Ultra-lightweight offline image compressor. Compress JPG, PNG, WebP images with high quality. No uploads, no cloud.",
   "type": "module",
   "private": false,
@@ -9,7 +9,7 @@
     "dev": "vite",
     "dev:desktop": "npx @neutralinojs/neu run",
     "build": "tsc && vite build",
-    "build:desktop": "tsc && vite build && node -e \"require('fs').copyFileSync('neutralino.config.json', 'build/neutralino.config.json')\" && npx @neutralinojs/neu build && node scripts/bundle-all.mjs",
+    "build:desktop": "tsc && vite build && node -e \"require('fs').copyFileSync('neutralino.config.json', 'build/neutralino.config.json')\" && node scripts/pre-build.mjs && npx @neutralinojs/neu build && node scripts/bundle-all.mjs && node scripts/post-build.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

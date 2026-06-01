@@ -1,6 +1,6 @@
 {
   "applicationId": "com.lightcrush.desktop",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "defaultMode": "window",
   "documentRoot": "/",
   "url": "/build/index.html",
