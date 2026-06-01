@@ -24,6 +24,11 @@ jobs:
         
       - name: Build Desktop Executables (Multi-OS)
         run: npm run build:desktop
+
+      - name: Zip macOS App Bundles
+        run: |
+          cd dist/lightcrush
+          zip -r lightcrush-mac_universal.zip lightcrush-mac_universal.app
           
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
@@ -32,9 +37,7 @@ jobs:
           generate_release_notes: true
           files: |
             dist/lightcrush/lightcrush-win_x64.exe
-            dist/lightcrush/lightcrush-mac_universal
-            dist/lightcrush/lightcrush-mac_x64
-            dist/lightcrush/lightcrush-mac_arm64
+            dist/lightcrush/lightcrush-mac_universal.zip
             dist/lightcrush/lightcrush-linux_x64
             dist/lightcrush/lightcrush-linux_arm64
             dist/lightcrush/lightcrush-linux_armhf

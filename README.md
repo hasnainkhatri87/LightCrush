@@ -22,7 +22,7 @@ No installation wizard required. Simply download the single portable file for yo
 | Operating System | Standalone Binary | File Size | Architecture |
 |------------------|-------------------|-----------|--------------|
 | **Windows** | [⬇️ Download `lightcrush-win_x64.exe`](https://github.com/hasnainkhatri87/LightCrush/releases/latest/download/lightcrush-win_x64.exe) | ~ 1.9 MB | 64-bit |
-| **macOS** | [⬇️ Download `lightcrush-mac_universal`](https://github.com/hasnainkhatri87/LightCrush/releases/latest/download/lightcrush-mac_universal) | ~ 2.1 MB | Intel & Apple Silicon (M1/M2/M3) |
+| **macOS** | [⬇️ Download `lightcrush-mac_universal.zip`](https://github.com/hasnainkhatri87/LightCrush/releases/latest/download/lightcrush-mac_universal.zip) | ~ 2.1 MB | Intel & Apple Silicon (M1/M2/M3) |
 | **Linux** | [⬇️ Download `lightcrush-linux_x64`](https://github.com/hasnainkhatri87/LightCrush/releases/latest/download/lightcrush-linux_x64) | ~ 2.0 MB | 64-bit |
 
 > **Security Note for macOS & Linux Users:** Since this is a standalone binary downloaded from the web, your OS might require you to grant execution permissions. Open your terminal, navigate to your downloads, and run: `chmod +x lightcrush-mac_universal` (or the respective Linux file) before running it.
