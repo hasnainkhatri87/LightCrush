@@ -1,7 +1,7 @@
 import type { OutputFormat } from '../types/image';
 
 export const outputFormats: Array<{ value: OutputFormat; label: string }> = [
-  { value: 'auto', label: 'Auto (WebP)' },
+  { value: 'auto', label: 'Auto (Same as Original)' },
   { value: 'webp', label: 'WebP' },
   { value: 'jpeg', label: 'JPEG' },
   { value: 'png', label: 'PNG' }

@@ -1,7 +1,11 @@
 import type { ImageMetadata, OptimizeResult, OptimizeSettings, OutputFormat } from '../types/image';
 
 function getMimeType(format: OutputFormat, inputFormat: string, hasTransparency: boolean, preserveTransparency: boolean): string {
-  if (format === 'auto') return 'image/webp';
+  if (format === 'auto') {
+    if (inputFormat === 'jpeg' || inputFormat === 'jpg') return 'image/jpeg';
+    if (inputFormat === 'png') return 'image/png';
+    return 'image/webp';
+  }
   if (format === 'jpeg') {
     // JPEG can't handle transparency — fall back to WebP
     if (hasTransparency && preserveTransparency) return 'image/webp';
